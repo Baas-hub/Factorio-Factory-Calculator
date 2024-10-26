@@ -1,0 +1,13 @@
+<Window x:Class="FactorioFactoryCalc.IngredientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Ingredient" SizeToContent="Height" Width="300">
+    <StackPanel Margin="10">
+        <Label Content="Ingredient Name:"/>
+        <TextBox x:Name="IngredientNameTextBox" Margin="0,5"/>
+        <CheckBox x:Name="IsRawMaterialCheckBox" Content="Is Raw Material" Margin="0,5"/>
+        <Button Content="Add Ingredient" Click="AddIngredient_Click" Margin="0,10"/>
+        <TextBlock x:Name="ConfirmationTextBlock" Margin="0,5" TextWrapping="Wrap" Foreground="Green"/>
+        <Button Content="Close" Click="Close_Click" Margin="0,5"/>
+    </StackPanel>
+</Window>

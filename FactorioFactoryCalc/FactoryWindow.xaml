@@ -1,0 +1,40 @@
+<Window x:Class="FactorioFactoryCalc.FactoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Factory" SizeToContent="Height" Width="400">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Label Content="Factory Name:"/>
+            <TextBox x:Name="FactoryNameTextBox" Margin="0,5"/>
+            <Label Content="Crafting Speed Multiplier:"/>
+            <TextBox x:Name="CraftingSpeedMultiplierTextBox" Margin="0,5"/>
+            <Label Content="Factory Type:"/>
+            <ComboBox x:Name="FactoryTypeComboBox" Margin="0,5"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="SupportedRecipeTypesListBox" Grid.Column="0" Height="150"/>
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <TextBox x:Name="RecipeTypeTextBox" Margin="0,5"/>
+                <Button Content="Add Recipe Type" Click="AddRecipeType_Click" Margin="0,5"/>
+                <Button Content="Remove Recipe Type" Click="RemoveRecipeType_Click" Margin="0,5"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="2">
+            <Button Content="Add Factory" Click="AddFactory_Click" Margin="0,10"/>
+            <TextBlock x:Name="ConfirmationTextBlock" Margin="0,5" TextWrapping="Wrap" Foreground="Green"/>
+            <Button Content="Close" Click="Close_Click" Margin="0,5"/>
+        </StackPanel>
+    </Grid>
+</Window>

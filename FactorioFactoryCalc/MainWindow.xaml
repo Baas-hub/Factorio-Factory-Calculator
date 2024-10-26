@@ -1,0 +1,12 @@
+﻿<Window x:Class="FactorioFactoryCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Factorio Factory Calculator" Height="350" Width="400">
+    <StackPanel Margin="10">
+        <Button Content="Add Ingredient" Click="OpenIngredientWindow_Click" Margin="0,5"/>
+        <Button Content="Add Recipe" Click="OpenRecipeWindow_Click" Margin="0,5"/>
+        <Button Content="Add Factory" Click="OpenFactoryWindow_Click" Margin="0,5"/>
+        <Button Content="Calculate Required Factories" Click="OpenCalculationWindow_Click" Margin="0,5"/>
+        <Button Content="Manage Factory Types" Click="OpenFactoryTypeWindow_Click" Margin="0,5"/>
+    </StackPanel>
+</Window>

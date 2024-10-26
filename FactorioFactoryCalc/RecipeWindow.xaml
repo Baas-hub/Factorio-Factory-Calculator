@@ -1,0 +1,55 @@
+<Window x:Class="FactorioFactoryCalc.RecipeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Recipe" SizeToContent="Height" Width="500">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Label Content="Recipe Name:"/>
+            <TextBox x:Name="RecipeNameTextBox" Margin="0,5"/>
+            <Label Content="Output Quantity:"/>
+            <TextBox x:Name="OutputQuantityTextBox" Margin="0,5"/>
+            <Label Content="Crafting Time (seconds):"/>
+            <TextBox x:Name="CraftingTimeTextBox" Margin="0,5"/>
+            <Label Content="Required Factory Type:"/>
+            <ComboBox x:Name="RequiredFactoryTypeComboBox" Margin="0,5"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="IngredientsListBox" Grid.Column="0" Height="200">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Ingredient.Name}" />
+                            <TextBlock Text=" - " />
+                            <TextBlock Text="{Binding Quantity}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                <Label Content="Ingredient:"/>
+                <ComboBox x:Name="IngredientComboBox" Margin="0,5"/>
+                <Label Content="Quantity:"/>
+                <TextBox x:Name="IngredientQuantityTextBox" Margin="0,5"/>
+                <Button Content="Add Ingredient" Click="AddIngredientToRecipe_Click" Margin="0,5"/>
+                <Button Content="Remove Ingredient" Click="RemoveIngredientFromRecipe_Click" Margin="0,5"/>
+            </StackPanel>
+        </Grid>
+
+        <StackPanel Grid.Row="2">
+            <Button Content="Add Recipe" Click="AddRecipe_Click" Margin="0,10"/>
+            <TextBlock x:Name="ConfirmationTextBlock" Margin="0,5" TextWrapping="Wrap" Foreground="Green"/>
+            <Button Content="Close" Click="Close_Click" Margin="0,5"/>
+        </StackPanel>
+    </Grid>
+</Window>
