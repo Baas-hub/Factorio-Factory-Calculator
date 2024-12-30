@@ -18,7 +18,6 @@ namespace FactorioFactoryCalc
             _supportedRecipeTypes = new ObservableCollection<string>();
             SupportedRecipeTypesListBox.ItemsSource = _supportedRecipeTypes;
 
-            // In the constructor, add:
             FactoryTypeComboBox.ItemsSource = _recipeManager.FactoryTypes;
             FactoryTypeComboBox.DisplayMemberPath = "Name";
         }
@@ -44,7 +43,6 @@ namespace FactorioFactoryCalc
         {
             if (decimal.TryParse(CraftingSpeedMultiplierTextBox.Text, out decimal craftingSpeedMultiplier))
             {
-                // In the AddFactory_Click method, update the factory creation:
                 var factory = new Factory
                 {
                     Name = FactoryNameTextBox.Text,

@@ -67,7 +67,6 @@ namespace FactorioFactoryCalc
                 };
                 _recipeManager.AddRecipe(recipe);
 
-                // Add the recipe output as an ingredient
                 var recipeOutput = new Ingredient
                 {
                     Name = recipe.Name,
